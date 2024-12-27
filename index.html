@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>图片压缩工具</h1>
+            <p>简单高效的在线图片压缩服务</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="fileInput" accept="image/png, image/jpeg" hidden>
+                    <svg class="upload-icon" width="50" height="50" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <p>点击或拖拽图片到这里</p>
+                </div>
+            </div>
+
+            <div class="compression-controls">
+                <div class="quality-control">
+                    <label for="quality">压缩质量</label>
+                    <input type="range" id="quality" min="0" max="100" value="70">
+                    <span id="qualityValue">70%</span>
+                </div>
+                <div class="size-control">
+                    <label for="maxSize">最大尺寸</label>
+                    <input type="range" id="maxSize" min="500" max="4000" value="1920" step="100">
+                    <span id="sizeValue">1920px</span>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-container">
+                    <div class="preview-box">
+                        <h3>原始图片</h3>
+                        <img id="originalPreview" alt="原始图片预览">
+                        <div class="file-info">
+                            <span id="originalSize">大小: -- MB</span>
+                        </div>
+                    </div>
+                    <div class="preview-box">
+                        <h3>压缩后</h3>
+                        <img id="compressedPreview" alt="压缩后预览">
+                        <div class="file-info">
+                            <span id="compressedSize">大小: -- MB</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="downloadBtn" class="download-btn" disabled>下载压缩后的图片</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.0/dist/browser-image-compression.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
